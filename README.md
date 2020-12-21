@@ -5,6 +5,7 @@ Load emulator by remaru
 
 Program what emulate loading with status bar
 Enter the commands one by one:
+
 /////////////////////////////////////////////////////////////////////////////////////////////
 sudo apt install git
 
