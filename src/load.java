@@ -4,9 +4,11 @@ import java.util.TimerTask;
 public class load {
 
     public static String combine_strings(String s1, String s2) {return s1 + s2;}
+    //Default Period and symbols
     static long period = 400;
     static String symbol = "=";
     static String symbol_end = ">";
+    ////////////////////////////////
     static int max_statusbar_length = 20;
     static int process_space_count = 0;
     static String spaces = "";
