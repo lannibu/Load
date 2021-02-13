@@ -9,7 +9,7 @@ public class load {
     static String symbol = "=";
     static String symbol_end = ">";
     ////////////////////////////////
-    static int max_status_length = 20;
+    static final int max_status_length = 20;
     static int process_space_count = 0;
     static String spaces = "";
     static String status = "";
