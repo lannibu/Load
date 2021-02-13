@@ -9,10 +9,10 @@ public class load {
     static String symbol = "=";
     static String symbol_end = ">";
     ////////////////////////////////
-    static int max_statusbar_length = 20;
+    static int max_status_length = 20;
     static int process_space_count = 0;
     static String spaces = "";
-    static String statusbar = "";
+    static String status = "";
     static int process_count = 0;
     static int percent = 0;
 
@@ -25,7 +25,7 @@ public class load {
         catch (ArrayIndexOutOfBoundsException ignored) {}
         // CREATING NEW FUNCTION WHAT RUNS PER SOME MILLISECONDS
         process_count = percent / 5;
-        process_space_count = max_statusbar_length - process_count;
+        process_space_count = max_status_length - process_count;
         for (int num = 0; num < process_space_count + 1; num++) {
             spaces = combine_strings(spaces , " ");
         }
@@ -34,17 +34,17 @@ public class load {
             public void run() {
                 // PROCESS BAR ZONE
                 process_count = percent / 5;
-                statusbar = "";
+                status = "";
                 spaces = "";
                 for (int num = 0; num < process_count; num++) {
                     if (symbol.length() > 1) {
-                        statusbar = combine_strings(statusbar, " " + symbol);
+                        status = combine_strings(status, " " + symbol);
                     }
                     else {
-                        statusbar = combine_strings(statusbar, symbol);
+                        status = combine_strings(status, symbol);
                     }
                 }
-                process_space_count = max_statusbar_length - process_count;
+                process_space_count = max_status_length - process_count;
                 for (int num = 0; num < process_space_count; num++) {
                     spaces = combine_strings(spaces , " ");
                 }
@@ -59,10 +59,10 @@ public class load {
                 if (percent >= 10 && percent < 100) {
                     System.out.print(" ");
                 }
-                System.out.print("[" + statusbar + symbol_end + spaces + "] [" + process_count + "] \r");
+                System.out.print("[" + status + symbol_end + spaces + "] [" + process_count + "] \r");
                 // CODE WHAT CLOSING THE PROGRAM WHEN "percent" EQUALS OR BIGGER THAN 100
                 if (percent >= 100) {
-                    System.out.println("Load complete at 100% [" + statusbar + symbol + symbol_end + "] [" + (process_count + 1) + "]");
+                    System.out.println("Load complete at 100% [" + status + symbol + symbol_end + "] [" + (process_count + 1) + "]");
                     System.exit(0);
                 }
                 // END
