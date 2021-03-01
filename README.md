@@ -19,7 +19,7 @@ cd Load
 
 javac load.java
 
-java load <long period (millisec:optional)> <String symbol (char:optional)> <String symbol_end (char:optional)>
+java load <long period (millisec:optional)> <String symbol (char:optional)> <String symbol_end (char:optional)> <int process_bar_length (num:optional)>
 
 ```
 #### Windows:
@@ -27,10 +27,10 @@ java load <long period (millisec:optional)> <String symbol (char:optional)> <Str
 ```
 javac load.java
 
-java load <long period (millisec:optional)> <String symbol (char:optional)> <String symbol_end (char:optional)>
+java load <long period (millisec:optional)> <String symbol (char:optional)> <String symbol_end (char:optional)> <int process_bar_length (num:optional)>
 
 ```
 #### Example: 
 ```
-java load 400 "=" ">" 
+java load 400 "=" ">" 20
 ```

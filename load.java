@@ -9,7 +9,7 @@ public class load {
     static String symbol = "=";
     static String symbol_end = ">";
     ////////////////////////////////
-    static final int max_status_length = 20;
+    static int max_status_length = 20;
     static int process_space_count = 0;
     static String spaces = "";
     static String status = "";
@@ -21,10 +21,11 @@ public class load {
             period = Long.parseLong(args[0]);
             symbol = args[1];
             symbol_end = args[2];
+            max_status_length = Integer.parseInt(args[3]);
         }
         catch (ArrayIndexOutOfBoundsException ignored) {}
         // CREATING NEW FUNCTION WHAT RUNS PER SOME MILLISECONDS
-        process_count = percent / 5;
+        process_count = percent / (100 / max_status_length);
         process_space_count = max_status_length - process_count;
         for (int num = 0; num < process_space_count + 1; num++) {
             spaces = combine_strings(spaces , " ");
@@ -33,7 +34,7 @@ public class load {
         TimerTask task = new TimerTask() {
             public void run() {
                 // PROCESS BAR ZONE
-                process_count = percent / 5;
+                process_count = percent / (100 / max_status_length);
                 status = "";
                 spaces = "";
                 for (int num = 0; num < process_count; num++) {
